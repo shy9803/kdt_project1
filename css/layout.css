@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* layout.css */
+
+/* 공통 서식 */
+header, main, footer {
+  width: 100%;
+}
+
+/* 헤더 */
+header {
+  height: 130px;
+}
+
+/* 메인 */
+#slide {
+  height: 960px;
+}
+
+#slide ~ section {
+  height: 860px;
+}
+
+/* 푸터 */
+footer {
+  height: 240px;
+  background-color: var(--n_color2);
+}
+footer > #b_site {
+  height: 70px;
+  background-color: var(--n_color1);
+}
+footer > .foot {
+  width: 1200px;
+  height: 170px;
+  margin: 0 auto;
+}

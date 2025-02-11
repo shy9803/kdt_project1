@@ -1,0 +1,295 @@
+@charset "UTF-8";
+/* common.css */
+/* 공통서식 정의, 헤더 및 푸터 */
+
+/* 공통 스타일 서식 */
+:root {
+  /* 컬러 스타일 */
+  --m_color: #A9D962;
+  --s_color1: #8DC3DA;
+  --s_color2: #657A8C;
+  --n_color1: #FFFFFF;
+  --n_color2: #CCCCCC;
+  --n_color3: #333333;
+  --up_color: #C4131B;
+
+  /* 폰트 스타일 */
+  --f_size12: 12px;
+  --f_size16: 16px;
+  --f_size18: 18px;
+  --f_size20: 20px;
+  --f_size24: 24px;
+  --f_size28: 28px;
+  --f_size32: 32px;
+
+  /* 모서리 둥글게(border-radius) */
+  --rad5: 5px;
+  --rad15: 15px;
+}
+
+/* 구글 웹폰트 */
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* 공통 서식 */
+html, body {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Nanum Gothic', arial, sans-serif;
+  color: var(--n_color3);
+  font-size: var(--f_size16);
+}
+
+.clear {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+/* 헤더 */
+header {
+  position: absolute;
+  z-index: 100;
+}
+.h_inner {
+  padding: 0 48px;
+  display: flex;
+  /* background-color: var(--n_color2); */
+}
+
+.act {
+  position: fixed;
+  background-color: var(--n_color1);
+  color: var(--n_color3);
+}
+.act a, .act i {
+  color: var(--n_color3) !important;
+}
+
+/* 헤더-로고 */
+#h_logo {
+  width: 180px;
+  height: 50px;
+  padding: 40px 0;
+}
+
+/* 헤더-우측 */
+#nav_wrap {
+  width: 100%;
+}
+
+/* 헤더-우측_상단 내비게이션 */
+.h_top {
+  width: 100%;
+  height: 80px;
+}
+.lnb {
+  width: 100%;
+  height: 60px;
+  position: relative;
+}
+.lnb > ul {
+  display: flex;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.lnb > ul > li {
+  width: 90px;
+  text-align: center;
+  margin: 5px;
+  line-height: 10px;
+  font-size: var(--f_size12);
+}
+.lnb > ul > li > a {
+  color: var(--n_color1);
+}
+.lnb > ul > li > a:hover,
+.gnb > ul > li:hover > a {
+  font-weight: bold;
+  border-bottom: 2px solid var(--m_color);
+}
+
+/* 헤더-우측 하단 */
+.h_bottom {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  z-index: 1;
+}
+
+/* 헤더-우측 하단 내비게이션 */
+.gnb {
+  width: 1140px;
+  height: 50px;
+  margin: 0 auto;
+}
+.gnb > ul {
+  display: flex;
+  width: 850px;
+  height: 50px;
+  margin: 0 auto;
+}
+.gnb > ul > li {
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 50px;
+}
+.gnb > ul > li > a {
+  font-size: var(--f_size18);
+  display: block;
+  color: var(--n_color1);
+}
+
+/* 헤더-우측_하단 내비게이션_서브메뉴 */
+.submenu {
+  display: none;
+  padding-top: 2px;
+}
+.submenu > li {
+  width: 150px;
+  text-align: center;
+  padding: 3px 0;
+}
+.submenu > li > a {
+  font-size: var(--f_size16);
+  color: var(--n_color3);
+  width: 100%;
+  display:inline-block;
+}
+
+.submenu:hover {
+  display: block;
+}
+.submenu > li:hover {
+  background-color: var(--s_color1);
+  border-radius: var(--rad5);
+  font-weight: bold;
+}
+
+/* 헤더-서브메뉴_배경 */
+.menu_back {
+  width: 100%;
+  height: 400px;
+  background-color: var(--n_color1);
+  position: absolute;
+  top: 130px;
+  left: 0;
+  display: none;
+  z-index: 0;
+}
+.menu_back:hover {
+  display: block;
+}
+
+/* 헤더-우측_아이콘 */
+.h_icon {
+  /* 원사이즈 16*16 (user는 14*16) */
+  transform: scale(1.2);
+  width: 100px;
+  height: inherit;
+}
+.h_icon > a {
+  margin: 0 5px;
+  color: var(--n_color1);
+}
+
+.h_icon > a:hover {
+  opacity: 0.7;
+}
+
+/* 푸터-브랜드 사이트 */
+footer {
+  overflow: hidden;
+}
+.foot {
+  position: relative;
+  width: 100%;
+}
+footer > #b_site {
+  width: 3000px;
+  overflow: hidden;
+  height: 70px;
+}
+#b_site > .brand {
+  width: 140px;
+  height: 70px;
+  padding: 0 15px;
+  float: left;
+  animation: brand_ani 12s infinite linear;
+}
+#b_site > .brand > a {
+  transform: translateY(-25px);
+}
+#b_site img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+}
+
+@keyframes brand_ani {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-500px);
+  }
+}
+
+/* 푸터 내용 */
+.f_txt {
+  padding: 0 15px;
+}
+
+/* 푸터-내비게이션 */
+.f_txt > nav > h3 {
+  display: none;
+}
+.legacy {
+  display: flex;
+  padding: 10px 0;
+}
+.legacy > li {
+  margin: 8px 15px;
+  line-height: 20px;
+}
+.legacy > li:first-child {
+  margin-left: 0;
+}
+.legacy > li:last-child {
+  margin-right: 0;
+}
+
+/* 푸터-회사정보 */
+.f_txt > address {
+  line-height: 25px;
+  width: 900px;
+  margin: 15px 0;
+}
+.f_txt > address > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.f_txt > address > ul > li {
+  width: 290px;
+}
+
+/* 푸터-패밀리사이트 */
+.f_site_wrap {
+  position: absolute;
+  top: 60px;
+  right: 35px;
+  width: 180px;
+  text-align: center;
+}
+#f_site {
+  border-radius: var(--rad5);
+  padding: 6px 12px;
+}
