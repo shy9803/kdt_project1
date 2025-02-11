@@ -58,6 +58,9 @@ for(let i = 0; i < tablist.length; i++) {
 document.querySelector('.pagi').innerHTML = n + ' / 9'
 
 l_btn.onclick = function() {
+  // 탭1 - 좌측 이동
+  // 탭3 - 좌측 이동
+  
   // 페이지 번호 변경
   if(n == 1) {
     n = 9;
@@ -68,6 +71,18 @@ l_btn.onclick = function() {
 }
 
 r_btn.onclick = function() {
+  // 우선 적용(추후 수정, 탭 활성화시만 적용되게)
+  // 탭1 - 우측 이동
+  $('.t_card_wrap').animate({'transform':'translateX(-340px)'},function(){
+    $('.t_card').first().appendTo('.t_card_wrap');
+    $('.t_card1_wrap').css({'transform':'translateX(0px)'});
+  });
+  // 탭3 - 우측 이동
+  $('.t_card1_wrap').animate({'transform':'translateX(-340px)'},function(){
+    $('.t_card1').first().appendTo('.t_card1_wrap');
+    $('.t_card1_wrap').css({'transform':'translateX(0px)'});
+  });
+  
   // 페이지 번호 변경
   if(n == 9) {
     n = 1;
