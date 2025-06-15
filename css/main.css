@@ -513,6 +513,7 @@ main > section > article > h2 {
 
 #p_info_con {
   width: 4500px;
+  display: block;
 }
 
 .t_card, .t_card1 { 
